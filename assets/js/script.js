@@ -1,0 +1,323 @@
+(function () {
+    window.addEventListener("load", () => {
+        // Preload
+        const preloader = document.querySelector(".ai-preloader");
+        preloader.classList.add("hide");
+
+        setTimeout(() => {
+            preloader.style.display = "none";
+        }, 500);
+
+        // Start the typing effect
+        const dynamicText = document.querySelector(".ai-typed__text--dynamic");
+        const words = dynamicText && dynamicText.dataset.text.split(',');
+        dynamicText && typeEffect(dynamicText, words);
+
+    });
+
+    // Get the header element and its offset height
+    const header = document.querySelector('.header');
+    const offset = header.offsetHeight;
+
+    // Function to handle scroll events
+    const handleScroll = () => {
+        const scrollTop = window.scrollY;
+
+        // Check for scroll position to add/remove the 'fixed' class
+        if (scrollTop > offset / 2) {
+            header.classList.add('fixed');
+            // document.body.style.paddingTop = offset + 'px';
+        } else {
+            header.classList.remove('fixed');
+            // document.body.style.paddingTop = 0 + 'px';
+        }
+    };
+
+    // Attach the scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Initial check on page load
+    if (window.scrollY > offset) {
+        header.classList.add('fixed');
+    }
+
+    // Video controls
+    const video = document.getElementById("aiVideo");
+
+    if (video) {
+        const playPauseBtn = document.getElementById("aiVideoPlayPause");
+        const volumeBtn = document.getElementById("aiVideoVolume");
+
+        const [playIcon, pauseIcon] = playPauseBtn.querySelectorAll("svg");
+        const [muteIcon, volumeIcon] = volumeBtn.querySelectorAll("svg");
+
+        const togglePlayPauseIcons = () => {
+            playIcon.classList.toggle("d-none", !video.paused);
+            pauseIcon.classList.toggle("d-none", video.paused);
+        };
+
+        const toggleVolumeIcons = () => {
+            muteIcon.classList.toggle("d-none", !video.muted);
+            volumeIcon.classList.toggle("d-none", video.muted);
+        };
+
+        playPauseBtn.addEventListener("click", () => {
+            video.paused ? video.play() : video.pause();
+            togglePlayPauseIcons();
+        });
+
+        volumeBtn.addEventListener("click", () => {
+            video.muted = !video.muted;
+            toggleVolumeIcons();
+        });
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+                togglePlayPauseIcons();
+            },
+            { threshold: 0.5 }
+        );
+
+        observer.observe(video);
+
+        // Initialize icon state on load
+        togglePlayPauseIcons();
+        toggleVolumeIcons();
+    }
+
+
+    // Counter animation
+    const counters = document.querySelectorAll(".ai-stats__item__count");
+
+    if (counters.length) {
+        let hasCounted = false;
+
+        const counterUp = (el, target, suffix = "", duration = 1000) => {
+            let start = 0;
+            const increment = target / (duration / 16); // approx 60fps
+            const isInt = Number.isInteger(target);
+
+            const update = () => {
+                start += increment;
+                if (start < target) {
+                    el.textContent = `${isInt ? Math.floor(start) : start.toFixed(0)}${suffix}`;
+                    requestAnimationFrame(update);
+                } else {
+                    el.textContent = `${isInt ? target : target.toFixed(0)}${suffix}`;
+                }
+            };
+
+            requestAnimationFrame(update);
+        };
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting && !hasCounted) {
+                    hasCounted = true;
+                    counters.forEach(counter => {
+                        const target = parseInt(counter.getAttribute("data-target"));
+                        const suffix = counter.getAttribute("data-suffix") || "";
+                        counterUp(counter, target, suffix, 1200);
+                    });
+                }
+            },
+            { threshold: 0.4 }
+        );
+
+        const statsSection = document.querySelector(".section--stats");
+        observer.observe(statsSection);
+    }
+
+    // Typing effect for the dynamic text
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    // Initialize Typing effect
+    const typeEffect = (dynamicText, words) => {
+        const currentWord = words[wordIndex];
+        const currentChar = currentWord.substring(0, charIndex);
+        dynamicText.textContent = currentChar;
+
+        // Determine typing or deleting behavior
+        if (!isDeleting && charIndex < currentWord.length) {
+            charIndex++;
+            setTimeout(() => typeEffect(dynamicText, words), 200)
+        } else if (isDeleting && charIndex > 0) {
+            charIndex--;
+            setTimeout(() => typeEffect(dynamicText, words), 100)
+        } else {
+            // Switch between typing and deleting mode
+            isDeleting = !isDeleting;
+            wordIndex = !isDeleting ? (wordIndex + 1) % words.length : wordIndex;
+            setTimeout(() => typeEffect(dynamicText, words), 800)
+        }
+    };
+
+    // Initialize Swiper
+    const swiperPartners = new Swiper(".swiper--partners", {
+        slidesPerView: "auto",
+        spaceBetween: 56,
+        autoplay: {
+            delay: 2000,
+            disableOnInteraction: true,
+        },
+    });
+
+    const swiperBlogs = new Swiper(".swiper--blogs", {
+        slidesPerView: 4,
+        spaceBetween: 24,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: true,
+        },
+    });
+
+    const swiperExternals = new Swiper(".swiper--externals", {
+        slidesPerView: 4,
+        spaceBetween: 24,
+        autoplay: {
+            delay: 2000,
+            disableOnInteraction: true,
+        },
+    });
+
+    // Concat object values
+    function concatValues(obj) {
+        let value = ''; for (let prop in obj) { value += obj[prop]; }
+        return value;
+    }
+
+    // Debounce function using modern syntax
+    function debounce(fn, delay = 100) {
+        let timeout;
+        return (...args) => {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => fn.apply(this, args), delay);
+        };
+    };
+
+    // Toaster function
+    function showToast(message, type) {
+        const toast = document.querySelector('.mn-toaster');
+        toast.textContent = message;
+        toast.className = `mn-toaster show ${type}`;
+
+        setTimeout(() => {
+            toast.className = 'mn-toaster';
+        }, 2500);
+    }
+
+    // Slide animation functions
+    function slideUp(target, duration = 500) {
+
+        target.style.transitionProperty = 'height, margin, padding';
+        target.style.transitionDuration = duration + 'ms';
+        target.style.boxSizing = 'border-box';
+        target.style.height = target.offsetHeight + 'px';
+        target.offsetHeight;
+        target.style.overflow = 'hidden';
+        target.style.height = 0;
+        target.style.paddingTop = 0;
+        target.style.paddingBottom = 0;
+        target.style.marginTop = 0;
+        target.style.marginBottom = 0;
+        window.setTimeout(() => {
+            target.style.display = 'none';
+            target.style.removeProperty('height');
+            target.style.removeProperty('padding-top');
+            target.style.removeProperty('padding-bottom');
+            target.style.removeProperty('margin-top');
+            target.style.removeProperty('margin-bottom');
+            target.style.removeProperty('overflow');
+            target.style.removeProperty('transition-duration');
+            target.style.removeProperty('transition-property');
+            //alert("!");
+        }, duration);
+    }
+
+    function slideDown(target, duration = 500) {
+        target.style.removeProperty('display');
+        let display = window.getComputedStyle(target).display;
+        if (display === 'none') display = 'block';
+        target.style.display = display;
+        let height = target.offsetHeight;
+        target.style.overflow = 'hidden';
+        target.style.height = 0;
+        target.style.paddingTop = 0;
+        target.style.paddingBottom = 0;
+        target.style.marginTop = 0;
+        target.style.marginBottom = 0;
+        target.offsetHeight;
+        target.style.boxSizing = 'border-box';
+        target.style.transitionProperty = "height, margin, padding";
+        target.style.transitionDuration = duration + 'ms';
+        target.style.height = height + 'px';
+        target.style.removeProperty('padding-top');
+        target.style.removeProperty('padding-bottom');
+        target.style.removeProperty('margin-top');
+        target.style.removeProperty('margin-bottom');
+        window.setTimeout(() => {
+            target.style.removeProperty('height');
+            target.style.removeProperty('overflow');
+            target.style.removeProperty('transition-duration');
+            target.style.removeProperty('transition-property');
+        }, duration);
+    }
+
+    function slideToggle(target, duration = 500) {
+        if (window.getComputedStyle(target).display === 'none') {
+            return slideDown(target, duration);
+        } else {
+            return slideUp(target, duration);
+        }
+    }
+
+    // Lazy load
+    function lazyLoad() {
+        if ("IntersectionObserver" in window) {
+            let lazyImgObserver = new IntersectionObserver((entries, lazyImgObserver) => {
+                entries.forEach(entry => {
+                    if (entry.intersectionRatio > 0.0) {
+                        let img = entry.target;
+                        if (!img.hasAttribute('src')) {
+                            img.setAttribute('src', img.dataset.src);
+                            img.classList.remove('lazy-load')
+                        }
+                    }
+                });
+            });
+            let lazyImages = document.querySelectorAll('.lazy-load');
+            for (let img of lazyImages) {
+                lazyImgObserver.observe(img);
+            }
+
+            // let lazyVideoObserver = new IntersectionObserver(function (entries, observer) {
+            //     entries.forEach(function (video) {
+            //         if (video.isIntersecting) {
+            //             for (let source in video.target.children) {
+            //                 let videoSource = video.target.children[source];
+            //                 if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE" && !videoSource.hasAttribute('src')) {
+            //                     videoSource.src = videoSource.dataset.src;
+            //                 }
+            //             }
+            //             video.target.load();
+            //             video.target.classList.remove("lazy-load");
+            //             lazyVideoObserver.unobserve(video.target);
+            //         }
+            //     });
+            // });
+
+            // let lazyVideos = document.querySelectorAll("video");
+            // for (let lazyVideo of lazyVideos) {
+            //     lazyVideoObserver.observe(lazyVideo);
+            // }
+        }
+    }
+})();
+

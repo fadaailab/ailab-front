@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AILAB</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+</head>
+<body>
+    <!-- Toaster -->
+    <div class="ai-toaster"></div>
+    <!-- Toaster -->
+
+    <!-- Preloader -->
+    <div class="ai-preloader">
+        <img src="./assets/images/logo.svg" alt="AILAB" width="202" height="56">
+    </div>
+    <!-- Preloader  -->
+
+    <!-- Header  -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__content__group">
+                    <div class="header__content__group__item">
+                        <a href="index.html" class="header__logo">
+                            <img src="./assets/images/logo.svg" alt="AILAB" width="202" height="44">
+                        </a>
+                    </div>
+                </div>
+                <div class="header__content__group">
+                    <div class="header__content__group__item">
+                        <div class="header__menu">
+                            <div class="header__menu__title d-lg-flex d-none">
+                                <a href="index.html" class="header__logo">
+                                    <img src="./assets/images/logo-dark.svg" alt="AILAB" width="58" height="44">
+                                </a>
+                                <button class="ai-btn ai-btn--icon ai-btn--secondary ai-btn--menu-toggle">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="black" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="header__menu__body">
+                                <ul class="header__menu__list">
+                                    <li>
+                                        <a class="active" href="index.html">Ana səhifə</a>
+                                    </li>
+                                    <li>
+                                        <a href="about.html">Haqqımızda</a>
+                                    </li>
+                                    <li>
+                                        <a href="projects.html">Layihələr</a>
+                                    </li>
+                                    <li>
+                                        <a href="career.html">Karyera</a>
+                                    </li>
+                                    <li>
+                                        <a href="events.html">Tədbirlər</a>
+                                    </li>
+                                    <li>
+                                        <a href="blogs.html">Bloq</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="header__menu__footer d-lg-flex d-none">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header  -->
+
+    <!-- Main -->
+    <main class="main main--home">
+        <!--  Welcome  -->
+        <section class="section section--welcome">
+            <div class="container-fluid">
+                <div class="section__content">
+                    <div class="section__body">
+                        <div class="ai-welcome">
+                            <div class="ai-welcome__media">
+                                <video autoplay muted loop playsinline controls="false" id="aiVideo">
+                                    <source src="./assets/videos/ailab.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="ai-welcome__media__overlay"></div>
+                                <div class="ai-welcome__media__controls">
+                                    <button class="ai-welcome__media__controls__item" id="aiVideoPlayPause">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="18" viewBox="0 0 17 18" fill="none">
+                                            <path d="M0 9.00002V5.44002C0 1.02002 3.13 -0.789983 6.96 1.42002L10.05 3.20002L13.14 4.98002C16.97 7.19002 16.97 10.81 13.14 13.02L10.05 14.8L6.96 16.58C3.13 18.79 0 16.98 0 12.56V9.00002Z" fill="white" />
+                                        </svg>
+                                        <svg class="d-none" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.71466 4.50745C4.71466 4.34405 4.79445 4.18735 4.93646 4.07181C5.07848 3.95627 5.2711 3.89136 5.47194 3.89136H6.9865C7.18734 3.89136 7.37996 3.95627 7.52197 4.07181C7.66399 4.18735 7.74377 4.34405 7.74377 4.50745V15.5971C7.74377 15.7605 7.66399 15.9172 7.52197 16.0327C7.37996 16.1483 7.18734 16.2132 6.9865 16.2132H5.47194C5.2711 16.2132 5.07848 16.1483 4.93646 16.0327C4.79445 15.9172 4.71466 15.7605 4.71466 15.5971V4.50745ZM12.2874 4.50745C12.2874 4.34405 12.3672 4.18735 12.5092 4.07181C12.6513 3.95627 12.8439 3.89136 13.0447 3.89136H14.5593C14.7601 3.89136 14.9527 3.95627 15.0948 4.07181C15.2368 4.18735 15.3166 4.34405 15.3166 4.50745V15.5971C15.3166 15.7605 15.2368 15.9172 15.0948 16.0327C14.9527 16.1483 14.7601 16.2132 14.5593 16.2132H13.0447C12.8439 16.2132 12.6513 16.1483 12.5092 16.0327C12.3672 15.9172 12.2874 15.7605 12.2874 15.5971V4.50745Z" fill="white" />
+                                        </svg>
+                                    </button>
+                                    <button class="ai-welcome__media__controls__item" id="aiVideoVolume">
+                                        <svg class="d-none" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                            <path d="M15 13.9584C14.8667 13.9584 14.7416 13.9167 14.625 13.8334C14.35 13.625 14.2917 13.2334 14.5 12.9584C15.55 11.5584 15.775 9.70002 15.1 8.09169C14.9667 7.77502 15.1167 7.40835 15.4333 7.27502C15.75 7.14169 16.1166 7.29169 16.25 7.60835C17.1 9.62502 16.8083 11.9667 15.5 13.7167C15.375 13.875 15.1916 13.9584 15 13.9584Z" fill="white" />
+                                            <path d="M16.525 16.0417C16.3917 16.0417 16.2667 16 16.15 15.9167C15.875 15.7083 15.8167 15.3167 16.025 15.0417C17.8083 12.6666 18.2 9.48332 17.05 6.74165C16.9167 6.42498 17.0667 6.05832 17.3833 5.92498C17.7 5.79165 18.0667 5.94165 18.2 6.25832C19.525 9.40832 19.075 13.0583 17.025 15.7917C16.9083 15.9583 16.7167 16.0417 16.525 16.0417Z" fill="white" />
+                                            <path d="M11.7 10.8C12.225 10.275 13.125 10.65 13.125 11.3917V13.8333C13.125 15.2667 12.6083 16.3417 11.6833 16.8583C11.3083 17.0667 10.8917 17.1667 10.4583 17.1667C9.79165 17.1667 9.07498 16.9417 8.34165 16.4833L7.80832 16.15C7.35832 15.8667 7.28332 15.2333 7.65832 14.8583L11.7 10.8Z" fill="white" />
+                                            <path d="M18.1417 1.85834C17.8917 1.60834 17.4834 1.60834 17.2334 1.85834L13.1084 5.98334C13.0584 4.65 12.5584 3.65 11.675 3.15834C10.7417 2.64167 9.55002 2.775 8.33335 3.53334L5.90835 5.05C5.74169 5.15 5.55002 5.20834 5.35835 5.20834H4.58335H4.16669C2.15002 5.20834 1.04169 6.31667 1.04169 8.33334V11.6667C1.04169 13.6833 2.15002 14.7917 4.16669 14.7917H4.30002L1.85002 17.2417C1.60002 17.4917 1.60002 17.9 1.85002 18.15C1.98335 18.2667 2.14169 18.3333 2.30835 18.3333C2.47502 18.3333 2.63335 18.2667 2.75835 18.1417L18.1417 2.75834C18.4 2.50834 18.4 2.10834 18.1417 1.85834Z" fill="white" />
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+                                            <path d="M11.8744 3.94025C11.8744 2.84279 10.547 2.29324 9.7715 3.06951L6.07496 6.76606H4.48791C3.55063 6.76606 2.58378 7.3115 2.30284 8.33093C2.11224 9.02542 2.01609 9.74243 2.01697 10.4626C2.01697 11.2003 2.11637 11.9149 2.30448 12.5943C2.5846 13.6129 3.55145 14.1592 4.48873 14.1592H6.07414L9.77068 17.8557C10.547 18.632 11.8744 18.0824 11.8744 16.985V3.94025ZM16.0507 4.7995C16.1662 4.68412 16.3228 4.61932 16.4861 4.61932C16.6493 4.61932 16.8059 4.68412 16.9214 4.7995C20.0495 7.92677 20.0495 12.9976 16.9214 16.1257C16.8047 16.2345 16.6502 16.2938 16.4906 16.291C16.331 16.2882 16.1787 16.2235 16.0658 16.1106C15.9529 15.9977 15.8883 15.8455 15.8854 15.6858C15.8826 15.5262 15.9419 15.3718 16.0507 15.255C16.6801 14.6257 17.1794 13.8785 17.52 13.0562C17.8606 12.234 18.0359 11.3526 18.0359 10.4626C18.0359 9.57256 17.8606 8.69124 17.52 7.86896C17.1794 7.04668 16.6801 6.29955 16.0507 5.67024C15.9353 5.55472 15.8705 5.39813 15.8705 5.23487C15.8705 5.0716 15.9353 4.91501 16.0507 4.7995Z" fill="white" />
+                                            <path d="M13.8731 6.97746C13.9303 6.92021 13.9982 6.8748 14.073 6.84381C14.1478 6.81282 14.2279 6.79688 14.3089 6.79688C14.3898 6.79688 14.4699 6.81282 14.5447 6.84381C14.6195 6.8748 14.6874 6.92021 14.7446 6.97746C15.2024 7.43515 15.5655 7.97853 15.8133 8.57656C16.061 9.1746 16.1885 9.81558 16.1885 10.4629C16.1885 11.1102 16.061 11.7512 15.8133 12.3492C15.5655 12.9473 15.2024 13.4906 14.7446 13.9483C14.6284 14.0605 14.4727 14.1225 14.3112 14.121C14.1497 14.1196 13.9952 14.0547 13.881 13.9404C13.7668 13.8261 13.7021 13.6716 13.7008 13.51C13.6994 13.3485 13.7616 13.1929 13.8739 13.0768C14.2172 12.7335 14.4895 12.326 14.6752 11.8775C14.861 11.429 14.9566 10.9483 14.9566 10.4629C14.9566 9.97745 14.861 9.49677 14.6752 9.04828C14.4895 8.59979 14.2172 8.19228 13.8739 7.84903C13.7585 7.73351 13.6937 7.57692 13.6937 7.41366C13.6937 7.25039 13.7585 7.0938 13.8739 6.97829L13.8731 6.97746Z" fill="white" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="ai-welcome__content">
+                                <h1 class="ai-welcome__title ai-typed">
+                                    <span class="ai-typed__text ai-typed__text--static">AILAB - </span>
+                                    <span class="ai-typed__text ai-typed__text--dynamic" data-text="Gələcəyin texnologiyasını daha yaxın edirik!, Ən son Süni İntellekt yenilikləri."> </span>
+                                    <span class="ai-typed__cursor">|</span>
+                                </h1>
+                                <a class="ai-btn ai-btn--star ai-welcome__cta" href="#">
+                                    <span>Biz kimik?</span>
+                                    <span class="ai-btn__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.69239 4.5C9.85535 4.50003 10.0139 4.55315 10.144 4.6513C10.2741 4.74945 10.3686 4.8873 10.4134 5.044L11.2264 7.89C11.4014 8.50292 11.7298 9.0611 12.1806 9.51183C12.6313 9.96255 13.1895 10.2909 13.8024 10.466L16.6484 11.279C16.805 11.3239 16.9427 11.4185 17.0408 11.5486C17.1388 11.6786 17.1919 11.8371 17.1919 12C17.1919 12.1629 17.1388 12.3214 17.0408 12.4514C16.9427 12.5815 16.805 12.6761 16.6484 12.721L13.8024 13.534C13.1895 13.7091 12.6313 14.0374 12.1806 14.4882C11.7298 14.9389 11.4014 15.4971 11.2264 16.11L10.4134 18.956C10.3685 19.1126 10.2739 19.2503 10.1438 19.3484C10.0138 19.4464 9.85529 19.4995 9.69239 19.4995C9.5295 19.4995 9.37103 19.4464 9.24095 19.3484C9.11087 19.2503 9.01625 19.1126 8.97139 18.956L8.15839 16.11C7.98334 15.4971 7.65495 14.9389 7.20422 14.4882C6.75349 14.0374 6.19531 13.7091 5.58239 13.534L2.73639 12.721C2.5798 12.6761 2.44206 12.5815 2.34401 12.4514C2.24597 12.3214 2.19293 12.1629 2.19293 12C2.19293 11.8371 2.24597 11.6786 2.34401 11.5486C2.44206 11.4185 2.5798 11.3239 2.73639 11.279L5.58239 10.466C6.19531 10.2909 6.75349 9.96255 7.20422 9.51183C7.65495 9.0611 7.98334 8.50292 8.15839 7.89L8.97139 5.044C9.01615 4.8873 9.11073 4.74945 9.24082 4.6513C9.37091 4.55315 9.52943 4.50003 9.69239 4.5ZM18.6924 1.5C18.8597 1.49991 19.0223 1.55576 19.1542 1.65869C19.2861 1.76161 19.3798 1.90569 19.4204 2.068L19.6784 3.104C19.9144 4.044 20.6484 4.778 21.5884 5.014L22.6244 5.272C22.787 5.31228 22.9315 5.40586 23.0347 5.5378C23.138 5.66974 23.1941 5.83246 23.1941 6C23.1941 6.16754 23.138 6.33026 23.0347 6.4622C22.9315 6.59414 22.787 6.68772 22.6244 6.728L21.5884 6.986C20.6484 7.222 19.9144 7.956 19.6784 8.896L19.4204 9.932C19.3801 10.0946 19.2865 10.2391 19.1546 10.3423C19.0226 10.4456 18.8599 10.5017 18.6924 10.5017C18.5249 10.5017 18.3621 10.4456 18.2302 10.3423C18.0982 10.2391 18.0047 10.0946 17.9644 9.932L17.7064 8.896C17.591 8.43443 17.3523 8.0129 17.0159 7.67648C16.6795 7.34005 16.258 7.10139 15.7964 6.986L14.7604 6.728C14.5978 6.68772 14.4533 6.59414 14.3501 6.4622C14.2468 6.33026 14.1907 6.16754 14.1907 6C14.1907 5.83246 14.2468 5.66974 14.3501 5.5378C14.4533 5.40586 14.5978 5.31228 14.7604 5.272L15.7964 5.014C16.258 4.89861 16.6795 4.65995 17.0159 4.32352C17.3523 3.9871 17.591 3.56557 17.7064 3.104L17.9644 2.068C18.005 1.90569 18.0987 1.76161 18.2306 1.65869C18.3625 1.55576 18.5251 1.49991 18.6924 1.5ZM17.1924 15C17.3499 14.9999 17.5035 15.0494 17.6313 15.1415C17.7591 15.2336 17.8546 15.3636 17.9044 15.513L18.2984 16.696C18.4484 17.143 18.7984 17.495 19.2464 17.644L20.4294 18.039C20.5784 18.089 20.7079 18.1845 20.7996 18.3121C20.8913 18.4397 20.9407 18.5929 20.9407 18.75C20.9407 18.9071 20.8913 19.0603 20.7996 19.1879C20.7079 19.3155 20.5784 19.411 20.4294 19.461L19.2464 19.856C18.7994 20.006 18.4474 20.356 18.2984 20.804L17.9034 21.987C17.8534 22.136 17.7578 22.2655 17.6303 22.3572C17.5027 22.4489 17.3495 22.4983 17.1924 22.4983C17.0353 22.4983 16.8821 22.4489 16.7545 22.3572C16.6269 22.2655 16.5314 22.136 16.4814 21.987L16.0864 20.804C16.0127 20.5833 15.8887 20.3827 15.7242 20.2182C15.5597 20.0537 15.3591 19.9297 15.1384 19.856L13.9554 19.461C13.8064 19.411 13.6769 19.3155 13.5852 19.1879C13.4934 19.0603 13.4441 18.9071 13.4441 18.75C13.4441 18.5929 13.4934 18.4397 13.5852 18.3121C13.6769 18.1845 13.8064 18.089 13.9554 18.039L15.1384 17.644C15.5854 17.494 15.9374 17.144 16.0864 16.696L16.4814 15.513C16.5311 15.3637 16.6265 15.2339 16.7541 15.1418C16.8817 15.0497 17.035 15.0001 17.1924 15Z" fill="white" />
+                                        </svg>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--  Welcome  -->
+
+        <!--  Stats -->
+        <section class="section section--stats">
+            <div class="container">
+                <div class="section__content">
+                    <div class="grid section__body">
+                        <div class="ai-stats">
+                            <div class="ai-stats__item">
+                                <div class="ai-stats__item__content">
+                                    <span class="ai-stats__item__count" data-target="4" data-suffix="">0</span>
+                                    <span class="ai-stats__item__title">Uğurlu layihə</span>
+                                </div>
+                            </div>
+                            <div class="ai-stats__item">
+                                <div class="ai-stats__item__content">
+                                    <span class="ai-stats__item__count" data-target="10" data-suffix="M+">0</span>
+                                    <span class="ai-stats__item__title">İcma üzvləri</span>
+                                </div>
+                            </div>
+                            <div class="ai-stats__item">
+                                <div class="ai-stats__item__content">
+                                    <span class="ai-stats__item__count" data-target="20" data-suffix="">0</span>
+                                    <span class="ai-stats__item__title">Sİ mühəndisi</span>
+                                </div>
+                            </div>
+                            <div class="ai-stats__item">
+                                <div class="ai-stats__item__content">
+                                    <span class="ai-stats__item__count" data-target="800" data-suffix="+">0</span>
+                                    <span class="ai-stats__item__title">Məzunlar</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--  Stats  -->
+
+        <!--  Works -->
+        <section class="section section--work">
+            <div class="container">
+                <div class="section__content">
+                    <div class="section__header">
+                        <div class="section__header__content">
+                            <h2 class="section__header__title">
+                                Azərbaycanda <span class="ai-highlight">Süni İntellekt</span> sahəsində innovativ işlər görürük.
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="section__body">
+                        <div class="ai-work">
+                            <div class="ai-work__item">
+                                <div class="ai-work__item__container">
+                                    <div class="ai-work__item__content">
+                                        <h3 class="ai-work__item__title">Süni İntellekt tətqiqatları</h3>
+                                        <p class="ai-work__item__desc">Süni intellekt alqoritmləri, maşın öyrənməsi və təbii dil emalı üzrə qabaqcıl tədqiqatlar aparırıq.</p>
+                                    </div>
+                                    <div class="ai-work__item__icon">
+                                        <img class="ai-work__item__icon" src="./assets/icons/works/ai-1.svg" alt="Süni İntellekt tətqiqatları" width="220" height="220">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ai-work__item">
+                                <div class="ai-work__item__container">
+                                    <div class="ai-work__item__content">
+                                        <h3 class="ai-work__item__title">Süni İntellekt tətqiqatları</h3>
+                                        <p class="ai-work__item__desc">Süni intellekt alqoritmləri, maşın öyrənməsi və təbii dil emalı üzrə qabaqcıl tədqiqatlar aparırıq.</p>
+                                    </div>
+                                    <div class="ai-work__item__icon">
+                                        <img class="ai-work__item__icon" src="./assets/icons/works/ai-2.svg" alt="Süni İntellekt tətqiqatları" width="220" height="220">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ai-work__item">
+                                <div class="ai-work__item__container">
+                                    <div class="ai-work__item__content">
+                                        <h3 class="ai-work__item__title">Süni İntellekt tətqiqatları</h3>
+                                        <p class="ai-work__item__desc">Süni intellekt alqoritmləri, maşın öyrənməsi və təbii dil emalı üzrə qabaqcıl tədqiqatlar aparırıq.</p>
+                                    </div>
+                                    <div class="ai-work__item__icon">
+                                        <img class="ai-work__item__icon" src="./assets/icons/works/ai-3.svg" alt="Süni İntellekt tətqiqatları" width="220" height="220">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--  Works -->
+
+        <!--  Who we are -->
+        <section class="section section--who-we-are">
+            <div class="section__content">
+                <div class="container">
+                    <div class="section__header">
+                        <div class="section__header__content">
+                            <h2 class="section__header__title">
+                                <span class="ai-highlight ai-highlight--glow">Biz</span>
+                                kimik?
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="section__body">
+                        <div class="ai-who-we-are">
+                            <div class="ai-who-we-are__media">
+                                <video autoplay muted playsinline>
+                                    <source src="./assets/videos/ailab-2.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <!-- <div class="ai-who-we-are__media__overlay"></div> -->
+                            </div>
+                            <div class="container">
+                                <div class="ai-who-we-are__content">
+                                    <div class="ai-who-we-are__info">
+                                        <p><strong>Rəqəmsal İnkişaf və Nəqliyyat Nazirliyi</strong>nin nəzdində fəaliyyət göstərən Azərbaycan Süni İntellekt Laboratoriyası (AI Lab) ölkəmizdə süni intellekt sahəsində tədqiqat və inkişafı təşviq edir. Laboratoriyamız süni intellekt süni İntellekt üzrə peşəkar kadr yetişdirməyi və bu sahədə rəqəmsal transformasiyanı sürətləndirməyi hədəfləyir.</p>
+                                    </div>
+                                    <div class="ai-who-we-are__stats">
+                                        <div class="ai-who-we-are__stats__item">
+                                            <div class="ai-who-we-are__stats__item__content">
+                                                <span class="ai-who-we-are__stats__item__count">4</span>
+                                                <span class="ai-who-we-are__stats__item__title">Uğurlu layihə</span>
+                                            </div>
+                                        </div>
+                                        <div class="ai-who-we-are__stats__item">
+                                            <div class="ai-who-we-are__stats__item__content">
+                                                <span class="ai-who-we-are__stats__item__count">307</span>
+                                                <span class="ai-who-we-are__stats__item__title">Əməkdaş</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--  Who we are  -->
+
+        <!--  Projects -->
+        <section class="section section--projects">
+            <div class="container">
+                <div class="section__content">
+                    <div class="section__header">
+                        <div class="section__header__content section__header__content--row">
+                            <h2 class="section__header__title">
+                                Əsas <span class="ai-highlight ai-highlight--glow">layihələr</span>
+                            </h2>
+                            <p class="section__header__desc">Azərbaycan Süni İntellekt Laboratoriyası olaraq həyata keçirilən bütün layihələr süni intellekt texnologiyalarına əsaslanır. Layihələrin məqsədi istifadəçilərin işlərini daha asan, effektiv və əlçatan hala gətirməkdir.</p>
+                        </div>
+                    </div>
+                    <div class="section__body">
+                        <div class="ai-projects">
+                            <div class="ai-projects__item ai-projects__item--1">
+                                <div class="ai-projects__item__content">
+                                    <span class="ai-projects__item__title">Here is the name of the project</span>
+                                    <p class="ai-projects__item__desc">Ethical considerations when developing AI applications.</p>
+                                    <a href="#" class="ai-btn  ai-btn--blur ai-projects__item__cta">
+                                        <span>View project</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M3.64819 19.92L10.1682 13.4C10.9382 12.63 10.9382 11.37 10.1682 10.6L3.64819 4.07996" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M13.2544 19.92L19.7744 13.4C20.5444 12.63 20.5444 11.37 19.7744 10.6L13.2544 4.07996" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </a>
+                                </div>
+                                <img class="ai-projects__item__media" src="./assets/images/projects/1.png" alt="project-1">
+                            </div>
+                            <div class="ai-projects__item ai-projects__item--2">
+                                <div class="ai-projects__item__content">
+                                    <span class="ai-projects__item__title">Here is the name of the project</span>
+                                    <p class="ai-projects__item__desc">Ethical considerations when developing AI applications.</p>
+                                    <a href="#" class="ai-btn  ai-btn--blur ai-projects__item__cta">
+                                        <span>View project</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M3.64819 19.92L10.1682 13.4C10.9382 12.63 10.9382 11.37 10.1682 10.6L3.64819 4.07996" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M13.2544 19.92L19.7744 13.4C20.5444 12.63 20.5444 11.37 19.7744 10.6L13.2544 4.07996" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </a>
+                                </div>
+                                <img class="ai-projects__item__media" src="./assets/images/projects/1.png" alt="project-2">
+                            </div>
+                            <div class="ai-projects__item ai-projects__item--3">
+                                <div class="ai-projects__item__content">
+                                    <span class="ai-projects__item__title">Here is the name of the project</span>
+                                    <p class="ai-projects__item__desc">Ethical considerations when developing AI applications.</p>
+                                    <a href="#" class="ai-btn  ai-btn--blur ai-projects__item__cta">
+                                        <span>View project</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M3.64819 19.92L10.1682 13.4C10.9382 12.63 10.9382 11.37 10.1682 10.6L3.64819 4.07996" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M13.2544 19.92L19.7744 13.4C20.5444 12.63 20.5444 11.37 19.7744 10.6L13.2544 4.07996" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </a>
+                                </div>
+                                <img class="ai-projects__item__media" src="./assets/images/projects/1.png" alt="project-3">
+                            </div>
+                            <div class="ai-projects__item ai-projects__item--4">
+                                <div class="ai-projects__item__content">
+                                    <span class="ai-projects__item__title">Here is the name of the project</span>
+                                    <p class="ai-projects__item__desc">Ethical considerations when developing AI applications.</p>
+                                    <a href="#" class="ai-btn  ai-btn--blur ai-projects__item__cta">
+                                        <span>View project</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M3.64819 19.92L10.1682 13.4C10.9382 12.63 10.9382 11.37 10.1682 10.6L3.64819 4.07996" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M13.2544 19.92L19.7744 13.4C20.5444 12.63 20.5444 11.37 19.7744 10.6L13.2544 4.07996" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </a>
+                                </div>
+                                <img class="ai-projects__item__media" src="./assets/images/projects/1.png" alt="project-4">
+                            </div>
+                            <div class="ai-projects__item ai-projects__item--5">
+                                <div class="ai-projects__item__content">
+                                    <span class="ai-projects__item__title">Here is the name of the project</span>
+                                    <p class="ai-projects__item__desc">Ethical considerations when developing AI applications.</p>
+                                    <a href="#" class="ai-btn  ai-btn--blur ai-projects__item__cta">
+                                        <span>View project</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M3.64819 19.92L10.1682 13.4C10.9382 12.63 10.9382 11.37 10.1682 10.6L3.64819 4.07996" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M13.2544 19.92L19.7744 13.4C20.5444 12.63 20.5444 11.37 19.7744 10.6L13.2544 4.07996" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </a>
+                                </div>
+                                <img class="ai-projects__item__media" src="./assets/images/projects/1.png" alt="project-5">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--  Projects -->
+
+        <!--  Partners -->
+        <section class="section section--partners">
+            <div class="container">
+                <div class="section__content">
+                    <div class="section__body">
+                        <div class="ai-partners">
+                            <div class="swiper swiper--partners">
+                                <div class="swiper-wrapper">
+                                    <a href="#" class="swiper-slide ai-partners__item">
+                                        <img src="./assets/images/partners/1.svg" alt="partner-1" />
+                                    </a>
+                                    <a href="#" class="swiper-slide ai-partners__item">
+                                        <img src="./assets/images/partners/2.svg" alt="partner-2" />
+                                    </a>
+                                    <a href="#" class="swiper-slide ai-partners__item">
+                                        <img src="./assets/images/partners/3.svg" alt="partner-3" />
+                                    </a>
+                                    <a href="#" class="swiper-slide ai-partners__item">
+                                        <img src="./assets/images/partners/1.svg" alt="partner-1" />
+                                    </a>
+                                    <a href="#" class="swiper-slide ai-partners__item">
+                                        <img src="./assets/images/partners/2.svg" alt="partner-2" />
+                                    </a>
+                                    <a href="#" class="swiper-slide ai-partners__item">
+                                        <img src="./assets/images/partners/3.svg" alt="partner-3" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--  Partners -->
+
+        <!--  Blogs -->
+        <section class="section section--blogs">
+            <div class="container">
+                <div class="section__content section__content--lg">
+                    <div class="section__header section__header--row">
+                        <div class="section__header__content section__header__content--row">
+                            <h2 class="section__header__title">
+                                Ən son Süni İntellekt <span class="ai-highlight ai-highlight--glow">yenilikləri.</span>
+                            </h2>
+                        </div>
+                        <a href="blogs.html" class="ai-btn ai-btn--blur">
+                            <span>Hamısına bax</span>
+                        </a>
+                    </div>
+                    <div class="section__body">
+                        <div class="ai-blogs">
+                            <div class="swiper swiper--blogs">
+                                <div class="swiper-wrapper">
+                                    <a href="#" class="swiper-slide ai-blogs__item">
+                                        <div class="ai-blogs__item__media">
+                                            <img src="./assets/images/blogs/1.png" alt="blog-1" />
+                                        </div>
+                                        <div class="ai-blogs__item__content">
+                                            <h3 class="ai-blogs__item__title">Süni İntellekt tətqiqatları</h3>
+                                            <p class="ai-blogs__item__desc">Süni intellekt alqoritmləri, maşın öyrənməsi və təbii dil emalı üzrə qabaqcıl tədqiqatlar aparırıq.</p>
+                                        </div>
+                                        <button class="ai-btn ai-btn--icon ai-btn--blur ai-btn--sm ai-blogs__item__cta">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path d="M14.4301 5.92999L20.5001 12L14.4301 18.07" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M3.5 12H20.33" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </button>
+                                    </a>
+                                    <a href="#" class="swiper-slide ai-blogs__item">
+                                        <div class="ai-blogs__item__media">
+                                            <img src="./assets/images/blogs/2.png" alt="blog-2" />
+                                        </div>
+                                        <div class="ai-blogs__item__content">
+                                            <h3 class="ai-blogs__item__title">Süni İntellekt tətqiqatları</h3>
+                                            <p class="ai-blogs__item__desc">Süni intellekt alqoritmləri, maşın öyrənməsi və təbii dil emalı üzrə qabaqcıl tədqiqatlar aparırıq.</p>
+                                        </div>
+                                        <button class="ai-btn ai-btn--icon ai-btn--blur ai-btn--sm ai-blogs__item__cta">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path d="M14.4301 5.92999L20.5001 12L14.4301 18.07" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M3.5 12H20.33" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </button>
+                                    </a>
+                                    <a href="#" class="swiper-slide ai-blogs__item">
+                                        <div class="ai-blogs__item__media">
+                                            <img src="./assets/images/blogs/1.png" alt="blog-1" />
+                                        </div>
+                                        <div class="ai-blogs__item__content">
+                                            <h3 class="ai-blogs__item__title">Süni İntellekt tətqiqatları</h3>
+                                            <p class="ai-blogs__item__desc">Süni intellekt alqoritmləri, maşın öyrənməsi və təbii dil emalı üzrə qabaqcıl tədqiqatlar aparırıq.</p>
+                                        </div>
+                                        <button class="ai-btn ai-btn--icon ai-btn--blur ai-btn--sm ai-blogs__item__cta">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path d="M14.4301 5.92999L20.5001 12L14.4301 18.07" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M3.5 12H20.33" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </button>
+                                    </a>
+                                    <a href="#" class="swiper-slide ai-blogs__item">
+                                        <div class="ai-blogs__item__media">
+                                            <img src="./assets/images/blogs/2.png" alt="blog-2" />
+                                        </div>
+                                        <div class="ai-blogs__item__content">
+                                            <h3 class="ai-blogs__item__title">Süni İntellekt tətqiqatları</h3>
+                                            <p class="ai-blogs__item__desc">Süni intellekt alqoritmləri, maşın öyrənməsi və təbii dil emalı üzrə qabaqcıl tədqiqatlar aparırıq.</p>
+                                        </div>
+                                        <button class="ai-btn ai-btn--icon ai-btn--blur ai-btn--sm ai-blogs__item__cta">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path d="M14.4301 5.92999L20.5001 12L14.4301 18.07" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M3.5 12H20.33" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </button>
+                                    </a>
+                                    <a href="#" class="swiper-slide ai-blogs__item">
+                                        <div class="ai-blogs__item__media">
+                                            <img src="./assets/images/blogs/1.png" alt="blog-1" />
+                                        </div>
+                                        <div class="ai-blogs__item__content">
+                                            <h3 class="ai-blogs__item__title">Süni İntellekt tətqiqatları</h3>
+                                            <p class="ai-blogs__item__desc">Süni intellekt alqoritmləri, maşın öyrənməsi və təbii dil emalı üzrə qabaqcıl tədqiqatlar aparırıq.</p>
+                                        </div>
+                                        <button class="ai-btn ai-btn--icon ai-btn--blur ai-btn--sm ai-blogs__item__cta">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path d="M14.4301 5.92999L20.5001 12L14.4301 18.07" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M3.5 12H20.33" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </button>
+                                    </a>
+                                    <a href="#" class="swiper-slide ai-blogs__item">
+                                        <div class="ai-blogs__item__media">
+                                            <img src="./assets/images/blogs/2.png" alt="blog-2" />
+                                        </div>
+                                        <div class="ai-blogs__item__content">
+                                            <h3 class="ai-blogs__item__title">Süni İntellekt tətqiqatları</h3>
+                                            <p class="ai-blogs__item__desc">Süni intellekt alqoritmləri, maşın öyrənməsi və təbii dil emalı üzrə qabaqcıl tədqiqatlar aparırıq.</p>
+                                        </div>
+                                        <button class="ai-btn ai-btn--icon ai-btn--blur ai-btn--sm ai-blogs__item__cta">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path d="M14.4301 5.92999L20.5001 12L14.4301 18.07" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M3.5 12H20.33" stroke="#fff" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--  Blogs -->
+
+        <!--  Externals -->
+        <section class="section section--externals">
+            <div class="container">
+                <div class="section__content">
+                    <div class="section__body">
+                        <div class="ai-externals">
+                            <div class="swiper swiper--externals">
+                                <div class="swiper-wrapper">
+                                    <a href="#" target="_blank" class="swiper-slide ai-externals__item">
+                                        <div class="ai-externals__item__content">
+                                            Heydər Əliyev Fondu
+                                        </div>
+                                        <div class="ai-externals__item__link">
+                                            <span>heydar-aliyev-foundation.org</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
+                                                <path d="M13.5 4.53711L4.5 13.5371M13.5 4.53711H6M13.5 4.53711V12.0371" stroke="#696DD4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                    </a>
+                                    <a href="#" target="_blank" class="swiper-slide ai-externals__item">
+                                        <div class="ai-externals__item__content">
+                                            Heydər Əliyev Fondu
+                                        </div>
+                                        <div class="ai-externals__item__link">
+                                            <span>heydar-aliyev-foundation.org</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
+                                                <path d="M13.5 4.53711L4.5 13.5371M13.5 4.53711H6M13.5 4.53711V12.0371" stroke="#696DD4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                    </a>
+                                    <a href="#" target="_blank" class="swiper-slide ai-externals__item">
+                                        <div class="ai-externals__item__content">
+                                            Heydər Əliyev Fondu
+                                        </div>
+                                        <div class="ai-externals__item__link">
+                                            <span>heydar-aliyev-foundation.org</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
+                                                <path d="M13.5 4.53711L4.5 13.5371M13.5 4.53711H6M13.5 4.53711V12.0371" stroke="#696DD4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                    </a>
+                                    <a href="#" target="_blank" class="swiper-slide ai-externals__item">
+                                        <div class="ai-externals__item__content">
+                                            Heydər Əliyev Fondu
+                                        </div>
+                                        <div class="ai-externals__item__link">
+                                            <span>heydar-aliyev-foundation.org</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
+                                                <path d="M13.5 4.53711L4.5 13.5371M13.5 4.53711H6M13.5 4.53711V12.0371" stroke="#696DD4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                    </a>
+                                    <a href="#" target="_blank" class="swiper-slide ai-externals__item">
+                                        <div class="ai-externals__item__content">
+                                            Heydər Əliyev Fondu
+                                        </div>
+                                        <div class="ai-externals__item__link">
+                                            <span>heydar-aliyev-foundation.org</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
+                                                <path d="M13.5 4.53711L4.5 13.5371M13.5 4.53711H6M13.5 4.53711V12.0371" stroke="#696DD4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--  Externals -->
+
+        <!--  Subscribe -->
+        <section class="section section--subscribe">
+            <div class="container">
+                <div class="section__content">
+                    <div class="section__body">
+                        <div class="ai-subscribe">
+                            <div class="ai-subscribe__content">
+                                <h3 class="ai-subscribe__title">Süni İntellekt yeniliklərindən xəbərdar olmaq üçün abonə ol</h3>
+                            </div>
+                            <form action="#" class="ai-subscribe__form">
+                                <input type="email" placeholder="E-poçt daxil et" />
+                                <button type="submit" class="ai-btn ai-btn--white">
+                                    <span>Abonə ol</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <!--  Projects -->
+    </main>
+    <!-- Main -->
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__body footer__body--primary">
+                    <div class="footer__logo">
+                        <a href="index.html">
+                            <img src="./assets/images/logo.svg" alt="AILAB" width="202" height="44">
+                        </a>
+                    </div>
+                    <div class="footer__menu">
+                        <ul class="footer__menu__list">
+                            <li>
+                                <a href="index.html" class="active">Ana səhifə</a>
+                            </li>
+                            <li>
+                                <a href="about.html">Haqqımızda</a>
+                            </li>
+                            <li>
+                                <a href="contact.html">Bizimlə əlaqə</a>
+                            </li>
+                            <li>
+                                <a href="resources.html">Resurslar</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer__body footer__body--secondary">
+                    <div class="ai-copyright">Bütün hüquqlar qorunur @ 2024 AILab</div>
+                    <ul class="ai-social-list">
+                        <li>
+                            <a href="#" aria-label="Facebook">
+                                <img src="./assets/icons/socials/facebook.svg" alt="facebook" width="24" height="24">
+                                <span>Facebook</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" aria-label="Twitter">
+                                <img src="./assets/icons/socials/twitter.svg" alt="twitter" width="24" height="24">
+                                <span>Twitter</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" aria-label="Instagram">
+                                <img src="./assets/icons/socials/instagram.svg" alt="instagram" width="24" height="24">
+                                <span>Instagram</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" aria-label="LinkedIn">
+                                <img src="./assets/icons/socials/linkedin.svg" alt="LinkedIn" width="24" height="24">
+                                <span>LinkedIn</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" aria-label="YouTube">
+                                <img src="./assets/icons/socials/youtube.svg" alt="youtube" width="24" height="24">
+                                <span>YouTube</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
