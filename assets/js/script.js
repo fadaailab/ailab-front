@@ -90,7 +90,6 @@
         toggleVolumeIcons();
     }
 
-
     // Counter animation
     const counters = document.querySelectorAll(".ai-stats__item__count");
 
@@ -133,6 +132,50 @@
         observer.observe(statsSection);
     }
 
+    // Application form
+    const form = document.getElementById("applicationForm");
+    const steps = document.querySelectorAll(".ai-form__step");
+    const nextBtns = document.querySelectorAll(".ai-form__step__btn-next");
+    const prevBtns = document.querySelectorAll(".ai-form__step__btn-prev");
+    const submitBtn = document.querySelector(".ai-form__step__btn-submit");
+
+    let currentStep = 0;
+
+    function showStep(index) {
+        steps.forEach((step, i) => {
+            step.classList.toggle("active", i === index);
+        });
+    }
+
+    nextBtns?.forEach(btn => {
+        btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            if (currentStep < steps.length - 1) {
+                currentStep++;
+                showStep(currentStep);
+            }
+        });
+    });
+
+    prevBtns?.forEach(btn => {
+        btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            if (currentStep > 0) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        });
+    });
+
+    submitBtn?.addEventListener("click", function (e) {
+        // e.preventDefault();
+        // if (currentStep === steps.length - 1) {
+        //     form.submit();
+        // } else {
+        //     alert("Please complete all steps before submitting.");
+        // }
+    })
+
     // Typing effect for the dynamic text
     let wordIndex = 0;
     let charIndex = 0;
@@ -158,6 +201,73 @@
             setTimeout(() => typeEffect(dynamicText, words), 800)
         }
     };
+
+    // File input handling
+    const fileInputs = document.querySelectorAll('input[type="file"]')
+    fileInputs && fileInputs.forEach((input) => {
+        input.addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            const fileNameDisplay = input.nextElementSibling.querySelector('.ai-form__control__label__text');
+
+            if (file && fileNameDisplay) {
+                fileNameDisplay.textContent = file.name;
+            } else if (fileNameDisplay) {
+                fileNameDisplay.textContent = 'Fayl seçilmədi';
+            }
+        });
+    });
+
+    // Quick search regex
+    let qsRegex;
+    let buttonFilters = {};
+    let buttonFilter;
+
+    // Init Isotope
+    const grid = document.querySelector('.ai-vacancies');
+    const iso = grid && new Isotope(grid, {
+        itemSelector: '.ai-vacancies__item',
+        layoutMode: 'fitRows',
+        fitRows: {
+            columnWidth: 304,
+            gutter: 16,
+            equalheight: true
+        },
+        filter: function (item) {
+            let searchResult = qsRegex ? item.textContent.match(qsRegex) : true
+            let buttonResult = buttonFilter ? item.matches(buttonFilter) : true;
+            return searchResult && buttonResult
+        }
+    });
+
+    const filterTabs = document.querySelectorAll('.ai-tabs__item')
+    filterTabs?.forEach(filterTab => {
+        filterTab.addEventListener('click', () => {
+            if (!filterTab.classList.contains('ai-tabs__item--active')) {
+                document.querySelector('.ai-tabs__item--active').classList.remove('ai-tabs__item--active')
+                filterTab.classList.add('ai-tabs__item--active')
+                let filterGroup = filterTab.closest('.ai-tabs').getAttribute('data-filter-group')
+                buttonFilters[filterGroup] = filterTab.getAttribute('data-filter')
+                buttonFilter = concatValues(buttonFilters);
+                iso.arrange()
+            }
+        });
+    })
+
+    // Use value of search field to filter
+    const quicksearch = document.querySelector('#searchVacancies');
+    quicksearch?.addEventListener('input', debounce(() => {
+        qsRegex = new RegExp(quicksearch.value, 'gi');
+        const activeTags = document.querySelectorAll('.ai-tags__item--selected')
+        activeTags?.forEach(activeTag => {
+            activeTag.classList.remove('ai-tags__item--selected')
+        })
+        iso.arrange();
+    }, 200));
+
+    // Initialize Fancybox
+    if (typeof Fancybox !== "undefined") {
+        Fancybox.bind('[data-fancybox="gallery"]', {});
+    }
 
     // Initialize Swiper
     const swiperPartners = new Swiper(".swiper--partners", {
@@ -187,6 +297,105 @@
         },
     });
 
+    // Initialize Tilt.js
+    const tiltElements = document.querySelectorAll('.ai-tilt');
+    tiltElements.length > 0 && VanillaTilt.init(tiltElements, {
+        max: 25,
+        speed: 400
+    });
+
+    // Handle modal background click to close
+    document.querySelectorAll('.ai-modal--closeable').forEach(modal => {
+        modal.addEventListener('click', function (e) {
+            const modalContent = this.querySelector('.ai-modal__content');
+            if (!modalContent.contains(e.target)) {
+                window.modal(this, 'hide');
+            }
+        });
+    });
+
+    // Handle opening modal
+    document.querySelectorAll('[data-toggle="modal"]').forEach(trigger => {
+        trigger.addEventListener('click', function () {
+            const modalSelector = this.getAttribute('data-target');
+            modalSelector && window.modal(modalSelector, 'show');
+        });
+    });
+
+    // Handle closing modal with button
+    document.querySelectorAll('[data-close="modal"]').forEach(closeBtn => {
+        closeBtn.addEventListener('click', function () {
+            const modal = this.closest('.ai-modal');
+            modal && window.modal(modal, 'hide');
+        });
+    });
+
+    window.modal = function (selectorOrElement, action, url) {
+        const showDelay = 150;
+        const modalEl = typeof selectorOrElement === 'string'
+            ? document.querySelector(selectorOrElement)
+            : selectorOrElement;
+
+        if (!modalEl) return;
+
+        switch (action) {
+            case 'show':
+                modalEl.style.display = 'block';
+                document.body.classList.add('overflow-hidden');
+
+                if (modalEl.classList.contains('ai-modal--multi-content')) {
+                    const step1Content = modalEl.querySelector('.ai-modal__content[data-step="1"]');
+                    if (step1Content) window.modalContent(step1Content, 'show');
+                }
+
+                setTimeout(() => {
+                    modalEl.classList.add('ai-modal--show');
+                }, showDelay);
+                break;
+
+            case 'hide':
+                modalEl.classList.remove('ai-modal--show');
+
+                setTimeout(() => {
+                    modalEl.style.display = 'none';
+                    document.body.classList.remove('overflow-hidden');
+
+                    if (modalEl.classList.contains('ai-modal--multi-content')) {
+                        modalEl.querySelectorAll('.ai-modal__content').forEach(content =>
+                            window.modalContent(content, 'hide')
+                        );
+                    }
+
+                    if (url) {
+                        window.location.replace(url);
+                    }
+                }, showDelay);
+                break;
+
+            default:
+                console.error('Unsupported action for modal:', action);
+        }
+    };
+
+    window.modalContent = function (selectorOrElement, action) {
+        const contentEl = typeof selectorOrElement === 'string'
+            ? document.querySelector(selectorOrElement)
+            : selectorOrElement;
+
+        if (!contentEl) return;
+
+        switch (action) {
+            case 'show':
+                contentEl.classList.add('ai-modal__content--show');
+                break;
+            case 'hide':
+                contentEl.classList.remove('ai-modal__content--show');
+                break;
+            default:
+                console.error('Unsupported action for modalContent:', action);
+        }
+    };
+
     // Concat object values
     function concatValues(obj) {
         let value = ''; for (let prop in obj) { value += obj[prop]; }
@@ -204,12 +413,12 @@
 
     // Toaster function
     function showToast(message, type) {
-        const toast = document.querySelector('.mn-toaster');
+        const toast = document.querySelector('.ai-toaster');
         toast.textContent = message;
-        toast.className = `mn-toaster show ${type}`;
+        toast.className = `ai-toaster show ${type}`;
 
         setTimeout(() => {
-            toast.className = 'mn-toaster';
+            toast.className = 'ai-toaster';
         }, 2500);
     }
 

@@ -22,6 +22,35 @@
     </div>
     <!-- Preloader  -->
 
+    <!-- Modal -->
+    <div class="ai-modal ai-modal--fade" id="modalAlertApplication">
+        <div class="ai-modal__dialog">
+            <div class="ai-modal__content">
+                <div class="ai-modal__header">
+                    <div class="ai-modal__header__icon">
+                        <img src="./assets/icons/modals/success.svg" alt="success" width="124" height="124">
+                        <!-- <img src="./assets/icons/modals/error.svg" alt="error" width="124" height="124"> -->
+                    </div>
+                    <span class="ai-modal__header__title">Mesajınız uğurla göndərilmişdir!</span>
+                    <p class="ai-modal__header__desc">Ən qısa müddətdə əmkdaşlarımız sizə geri dönüş edəcək.</p>
+                    <button class="ai-modal__close" data-close="modal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z" stroke="#8C8C8C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M9.16998 14.8299L14.83 9.16992" stroke="#8C8C8C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M14.83 14.8299L9.16998 9.16992" stroke="#8C8C8C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="ai-modal__footer">
+                    <button class="ai-btn ai-btn--gradient" data-close="modal">
+                        <span>Aydındır</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+
     <!-- Header  -->
     <header class="header">
         <div class="container">
@@ -87,7 +116,7 @@
                     <div class="section__body">
                         <div class="ai-welcome">
                             <div class="ai-welcome__media">
-                                <video autoplay muted loop playsinline controls="false" id="aiVideo">
+                                <video autoplay muted loop playsinline webkit-playsinline id="aiVideo">
                                     <source src="./assets/videos/ailab.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
@@ -121,7 +150,7 @@
                                     <span class="ai-typed__text ai-typed__text--dynamic" data-text="Gələcəyin texnologiyasını daha yaxın edirik!, Ən son Süni İntellekt yenilikləri."> </span>
                                     <span class="ai-typed__cursor">|</span>
                                 </h1>
-                                <a class="ai-btn ai-btn--star ai-welcome__cta" href="#">
+                                <a href="about.html" class="ai-btn ai-btn--star ai-welcome__cta">
                                     <span>Biz kimik?</span>
                                     <span class="ai-btn__icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
@@ -181,7 +210,7 @@
                     <div class="section__header">
                         <div class="section__header__content">
                             <h2 class="section__header__title">
-                                Azərbaycanda <span class="ai-highlight">Süni İntellekt</span> sahəsində innovativ işlər görürük.
+                                Azərbaycanda <span class="ai-highlight ai-highlight--glow">Süni İntellekt</span> sahəsində innovativ işlər görürük.
                             </h2>
                         </div>
                     </div>
@@ -244,7 +273,7 @@
                     <div class="section__body">
                         <div class="ai-who-we-are">
                             <div class="ai-who-we-are__media">
-                                <video autoplay muted playsinline>
+                                <video autoplay muted playsinline webkit-playsinline>
                                     <source src="./assets/videos/ailab-2.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
@@ -520,6 +549,194 @@
             </div>
         </section>
         <!--  Blogs -->
+
+        <!--  Application -->
+        <section class="section section--application">
+            <div class="container">
+                <div class="section__content section__content--lg">
+                    <div class="section__header">
+                        <div class="section__header__content section__header__content--row">
+                            <h2 class="section__header__title">
+                                Müraciətlərin <span class="ai-highlight ai-highlight--glow">qəbulu</span>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="section__body">
+                        <div class="ai-application">
+                            <form class="ai-form" id="applicationForm" action="" method="get">
+                                <div class="ai-form__step active">
+                                    <div class="ai-form__step__header">
+                                        <span class="ai-form__step__indicator">Addım 1</span>
+                                        <div class="ai-form__step__title">Müraciət məqsədini seçin</div>
+                                        <div class="ai-form__step__desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
+                                    </div>
+                                    <div class="ai-form__step__body">
+                                        <div class="ai-form__row">
+                                            <div class="ai-form__col">
+                                                <div class="ai-form__item">
+                                                    <div class="ai-form__item__body">
+                                                        <div class="ai-form__control ai-form__control--radio">
+                                                            <input class="ai-form__control__input" type="radio" id="startup" name="applicationType" value="1">
+                                                            <label class="ai-form__control__label" for="startup">
+                                                                <span class="ai-form__control__label__icon"></span>
+                                                                <span class="ai-form__control__label__text">Startup akselerasiya</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="ai-form__item">
+                                                    <div class="ai-form__item__body">
+                                                        <div class="ai-form__control ai-form__control--radio">
+                                                            <input class="ai-form__control__input" type="radio" id="artificialIntelligence" name="applicationType" value="3">
+                                                            <label class="ai-form__control__label" for="artificialIntelligence">
+                                                                <span class="ai-form__control__label__icon"></span>
+                                                                <span class="ai-form__control__label__text">Süni İntellekt tədrisi</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="ai-form__col">
+                                                <div class="ai-form__item">
+                                                    <div class="ai-form__item__body">
+                                                        <div class="ai-form__control ai-form__control--radio">
+                                                            <input class="ai-form__control__input" type="radio" id="internship" name="applicationType" value="2" checked>
+                                                            <label class="ai-form__control__label" for="internship">
+                                                                <span class="ai-form__control__label__icon"></span>
+                                                                <span class="ai-form__control__label__text">Təcrübə proqramı</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="ai-form__item">
+                                                    <div class="ai-form__item__body">
+                                                        <div class="ai-form__control ai-form__control--radio">
+                                                            <input class="ai-form__control__input" type="radio" id="researchCenter" name="applicationType" value="4">
+                                                            <label class="ai-form__control__label" for="researchCenter">
+                                                                <span class="ai-form__control__label__icon"></span>
+                                                                <span class="ai-form__control__label__text">Tədqiqat mərkəzi</span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ai-form__step__footer">
+                                        <button type="button" class="ai-btn ai-btn--gradient ai-form__step__btn-next">
+                                            <span>Növbəti</span>
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M4 12H20M20 12L14 6M20 12L14 18" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="ai-form__step">
+                                    <div class="ai-form__step__header">
+                                        <span class="ai-form__step__indicator">Addım 2</span>
+                                        <div class="ai-form__step__title">Müraciətinizi tammamlayın</div>
+                                        <div class="ai-form__step__desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
+                                    </div>
+                                    <div class="ai-form__step__body">
+                                        <div class="ai-form__row">
+                                            <div class="ai-form__col">
+                                                <div class="ai-form__item">
+                                                    <div class="ai-form__item__body">
+                                                        <div class="ai-form__control ai-form__control--text">
+                                                            <input class="ai-form__control__input" type="text" id="fullname" name="fullname" placeholder="Ad soyad" required>
+                                                            <div class="ai-form__control__icon">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                                                    <path d="M12 12.1484C14.7614 12.1484 17 9.90986 17 7.14844C17 4.38701 14.7614 2.14844 12 2.14844C9.23858 2.14844 7 4.38701 7 7.14844C7 9.90986 9.23858 12.1484 12 12.1484Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                                    <path d="M20.59 22.1484C20.59 18.2784 16.74 15.1484 12 15.1484C7.26 15.1484 3.41 18.2784 3.41 22.1484" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="ai-form__item">
+                                                    <div class="ai-form__item__body">
+                                                        <div class="ai-form__control ai-form__control--email">
+                                                            <input class="ai-form__control__input" type="email" id="email" name="email" placeholder="E-poçt" required>
+                                                            <div class="ai-form__control__icon">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                                                    <path d="M17 20.5371H7C4 20.5371 2 19.0371 2 15.5371V8.53711C2 5.03711 4 3.53711 7 3.53711H17C20 3.53711 22 5.03711 22 8.53711V15.5371C22 19.0371 20 20.5371 17 20.5371Z" stroke="#BFBFBF" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                                                    <path d="M17 9.03711L13.87 11.5371C12.84 12.3571 11.15 12.3571 10.12 11.5371L7 9.03711" stroke="#BFBFBF" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="ai-form__item">
+                                                    <div class="ai-form__item__body">
+                                                        <div class="ai-form__control ai-form__control--text">
+                                                            <input class="ai-form__control__input" type="text" id="phone" name="phone" placeholder="Telefon nömrəsi" required>
+                                                            <div class="ai-form__control__icon">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                                                    <path d="M21.97 18.3671C21.97 18.7271 21.89 19.0971 21.72 19.4571C21.55 19.8171 21.33 20.1571 21.04 20.4771C20.55 21.0171 20.01 21.4071 19.4 21.6571C18.8 21.9071 18.15 22.0371 17.45 22.0371C16.43 22.0371 15.34 21.7971 14.19 21.3071C13.04 20.8171 11.89 20.1571 10.75 19.3271C9.6 18.4871 8.51 17.5571 7.47 16.5271C6.44 15.4871 5.51 14.3971 4.68 13.2571C3.86 12.1171 3.2 10.9771 2.72 9.84711C2.24 8.70711 2 7.61711 2 6.57711C2 5.89711 2.12 5.24711 2.36 4.64711C2.6 4.03711 2.98 3.47711 3.51 2.97711C4.15 2.34711 4.85 2.03711 5.59 2.03711C5.87 2.03711 6.15 2.09711 6.4 2.21711C6.66 2.33711 6.89 2.51711 7.07 2.77711L9.39 6.04711C9.57 6.29711 9.7 6.52711 9.79 6.74711C9.88 6.95711 9.93 7.16711 9.93 7.35711C9.93 7.59711 9.86 7.83711 9.72 8.06711C9.59 8.29711 9.4 8.53711 9.16 8.77711L8.4 9.56711C8.29 9.67711 8.24 9.80711 8.24 9.96711C8.24 10.0471 8.25 10.1171 8.27 10.1971C8.3 10.2771 8.33 10.3371 8.35 10.3971C8.53 10.7271 8.84 11.1571 9.28 11.6771C9.73 12.1971 10.21 12.7271 10.73 13.2571C11.27 13.7871 11.79 14.2771 12.32 14.7271C12.84 15.1671 13.27 15.4671 13.61 15.6471C13.66 15.6671 13.72 15.6971 13.79 15.7271C13.87 15.7571 13.95 15.7671 14.04 15.7671C14.21 15.7671 14.34 15.7071 14.45 15.5971L15.21 14.8471C15.46 14.5971 15.7 14.4071 15.93 14.2871C16.16 14.1471 16.39 14.0771 16.64 14.0771C16.83 14.0771 17.03 14.1171 17.25 14.2071C17.47 14.2971 17.7 14.4271 17.95 14.5971L21.26 16.9471C21.52 17.1271 21.7 17.3371 21.81 17.5871C21.91 17.8371 21.97 18.0871 21.97 18.3671Z" stroke="#BFBFBF" stroke-width="1.5" stroke-miterlimit="10" />
+                                                                    <path d="M18.5 9.03711C18.5 8.43711 18.03 7.51711 17.33 6.76711C16.69 6.07711 15.84 5.53711 15 5.53711" stroke="#BFBFBF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                                    <path d="M22 9.03711C22 5.16711 18.87 2.03711 15 2.03711" stroke="#BFBFBF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="ai-form__item">
+                                                    <div class="ai-form__item__body">
+                                                        <div class="ai-form__control ai-form__control--file">
+                                                            <input class="ai-form__control__input" type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+                                                            <label class="ai-form__control__label" for="cv">
+                                                                <span class="ai-form__control__label__text">CV yükləyin</span>
+                                                                <span class="ai-form__control__label__icon">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                                                        <path d="M9 17.0371V11.0371L7 13.0371" stroke="#BFBFBF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                                        <path d="M9 11.0371L11 13.0371" stroke="#BFBFBF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                                        <path d="M22 10.0371V15.0371C22 20.0371 20 22.0371 15 22.0371H9C4 22.0371 2 20.0371 2 15.0371V9.03711C2 4.03711 4 2.03711 9 2.03711H14" stroke="#BFBFBF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                                        <path d="M22 10.0371H18C15 10.0371 14 9.03711 14 6.03711V2.03711L22 10.0371Z" stroke="#8C8C8C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                                    </svg>
+                                                                </span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ai-form__item__footer">
+                                                        <p class="info">PDF, Word. Max. 10mb</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="ai-form__col">
+                                                <div class="ai-form__item">
+                                                    <div class="ai-form__item__body">
+                                                        <div class="ai-form__control ai-form__control--textarea">
+                                                            <textarea class="ai-form__control__input" id="letter" name="letter" placeholder="Motivasiya məktubu" required></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ai-form__item__footer">
+                                                        <p class="info">Maksimum 200 söz</p>
+                                                        <!-- <p class="error">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                                            <p class="success">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                                            <p class="warning">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ai-form__step__footer">
+                                        <button type="button" class="ai-btn ai-btn--blur ai-form__step__btn-prev" data-toggle="modal" data-target="#modalAlertApplication">
+                                            <span>Geri</span>
+                                        </button>
+                                        <button type="submit" class="ai-btn ai-btn--gradient ai-form__step__btn-submit">
+                                            <span>Müraciət et</span>
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M4 12H20M20 12L14 6M20 12L14 18" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <!--  Application -->
 
         <!--  Externals -->
         <section class="section section--externals">
